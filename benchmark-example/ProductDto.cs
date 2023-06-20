@@ -15,5 +15,15 @@
                 Price = product.Price + product.Price * 100 / product.VatPercentage
             };
         }
+
+        public static explicit operator ProductDto(Product product)
+        {
+            return new ProductDto
+            {
+                Name = product.ProductName,
+                Description = product.ProductDescription,
+                Price = product.Price + product.Price * 100 / product.VatPercentage
+            };
+        }
     }
 }

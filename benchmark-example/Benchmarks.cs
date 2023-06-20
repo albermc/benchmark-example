@@ -56,5 +56,23 @@ namespace benchmark_example
                 var productDto = ProductDto.FromProduct(product);
             }
         }
+
+        //[Benchmark]
+        //public void WithImplicitOperator()
+        //{
+        //    foreach (var product in products)
+        //    {
+        //        ProductDto productDto = product;
+        //    }
+        //}
+
+        [Benchmark]
+        public void WithExplicitOperator()
+        {
+            foreach (var product in products)
+            {
+                var productDto = (ProductDto)product;
+            }
+        }
     }
 }
